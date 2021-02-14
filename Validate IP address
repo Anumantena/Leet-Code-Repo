@@ -21,7 +21,7 @@ class Solution:
         if len(groups)!=4:     // checking if length of each group is not equal to 4
             return False
         for part in groups:
-            if part.isdigit() == False or part!= str(int(part)) or int(part)<0 or int(part)>255:
+            if part.isdigit() == False or part!= str(int(part)) or int(part)<0 or int(part)>255:   // if the part is not a digit return false  // if the part is leading with "0" i.e str(int(part)) return false 
                 return False
         return "IPv4"
         
