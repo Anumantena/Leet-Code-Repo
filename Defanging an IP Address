@@ -1,0 +1,30 @@
+Problem:
+
+Given a valid (IPv4) IP address, return a defanged version of that IP address.
+A defanged IP address replaces every period "." with "[.]".
+
+Example:
+Input: address = "1.1.1.1"
+Output: "1[.]1[.]1[.]1"
+
+Solution:
+
+#1:
+
+class Solution:
+    def defangIPaddr(self, address: str) -> str:
+        return address.replace('.','[.]')
+        
+        
+#2:
+
+class Solution:
+    def defangIPaddr(self, address: str) -> str:
+        result =""
+        for char in address:
+            if char=='.':
+                result+='[.]'
+            else:
+                result+=char
+        return result
+
