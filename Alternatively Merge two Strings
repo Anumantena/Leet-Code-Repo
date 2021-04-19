@@ -1,0 +1,25 @@
+Problem : Given 2 strings, merge them in an alternate way, i.e. the final string’s first character is the first character of the first string, the second character of the final string is the first character of the second string and so on.
+
+Example :
+
+Input : string 1 :"geeks"
+        string 2 :"forgeeks"
+Output: "gfeoerkgseeks"
+
+
+Solution:
+
+s1 = input("enter your string name")
+s2 = input("enter your string name")
+result = " "
+i=0
+    while( i < len(s1) or i<len(s2):
+       if i<len(s1):
+         result+ =s1[i]
+       if i<len(s2):
+         result+ = s2[i]
+         
+       i+=1
+      
+    print(result)  
+      
