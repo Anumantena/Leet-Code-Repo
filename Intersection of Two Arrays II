@@ -1,0 +1,27 @@
+Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must appear as many times as it shows in both arrays and you may return the result in any order.
+
+Example 1:
+
+Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2,2]
+
+Example 2:
+
+Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+Output: [4,9]
+Explanation: [9,4] is also accepted.
+
+Python Code:
+
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        num = set(nums1)        // converting lists into sets
+        nums = set(nums2)
+        nums3 = list(num.intersection(nums))     // using intersection it will display the values that are present only in both num and nums2
+        res = []  
+        for i in nums3:
+            res += [i]*min(nums1.count(i), nums2.count(i))   //appending i and min count of i in the given two lists
+        return res
+        
+        
+   ##Time Complexity - O(n)
