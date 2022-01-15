@@ -1,0 +1,30 @@
+Given a number N, find all prime numbers upto N ( N included ).
+
+Example:
+
+if N = 7,
+
+all primes till 7 = {2, 3, 5, 7}. Make sure the returned array is sorted.
+
+Solution:
+
+class Solution:
+
+    def primen(self, A):
+        if A <= 1:
+            return []
+            
+        notprime = set()
+        prime = []
+        
+        x = 2 
+        while x <= A:
+            if x not in notprime:
+                prime.append(x)
+            for i in range(x, A+1, x):
+                notprime.add(i)
+                
+            x += 1
+        
+        return prime
+
